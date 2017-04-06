@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <script src="jquery.js"></script>
+    <style>
+        *{
+            margin: 0;padding: 0;font-size: 14px;
+        }
+        .top{height: 50px;background: #000}
+        .gallary{padding: 20px 20px 85px 20px;overflow: hidden;background: #efefef;position: relative;box-sizing: border-box}
+        .gallary-view{background: #fff;text-align: center;padding: 10px;box-sizing: border-box}
+        .gallary-view__show{overflow: hidden;height: 100%;position: relative}
+        .gallary-view__show--left{position: absolute;width: 50%;left: 0;height: 100%;cursor: url(images/up_l.cur),auto !important;}
+        .gallary-view__show--right{position: absolute;width: 50%;right: 0;height: 100%;cursor: url(images/up_r.cur),auto !important;}
+        .gallary-thumb__img{height: 60px;position: absolute;bottom: 15px;left: 85px;right: 85px;box-sizing: border-box;overflow: hidden;white-space: nowrap;}
+        .gallary-thumb__img a{display: inline-block;width: 60px;height: 60px;box-sizing: border-box;border: 2px solid transparent;}
+        .gallary-thumb__img a.active,.gallary-thumb__img a:hover{border: 2px solid #ff4e00;}
+        .gallary-thumb__img a img{width: 100%;height: 100%;}
+        .gallary-arrow{position: absolute;bottom: 0;height: 85px;width: 85px;}
+        .gallary-arrow a{width: 50px;height: 70px;display: block;background: url("images/share_ioc.png") no-repeat;margin-top: 8px}
+        .gallary-thumb__left{left: 0;}
+        .gallary-thumb__right{right: 0;}
+        .gallary-thumb__left a{background-position: 13px -155px;margin-left: 20px}
+        .gallary-thumb__right a{background-position: 13px -208px;margin-left: 10px}
+
+        [data-compnent='gallary']{
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="top"></div>
+
+<div class="gallary" data-compnent="gallary">
+    <div class="gallary-view">
+        <div class="gallary-view__show">
+            <div class="gallary-view__show--left"></div>
+            <div class="gallary-view__show--right"></div>
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="gallary-arrow gallary-thumb__left"><a href="javascript:;"></a></div>
+    <div class="gallary-arrow gallary-thumb__right"><a href="javascript:;"></a></div>
+    <div class="gallary-thumb__img">
+        <a href="javascript:;" data-id="1" data-img="img/1.jpg"><img src="img/1.jpg" alt=""></a>
+        <a href="javascript:;" data-id="2" data-img="img/2.jpg"><img src="img/2.jpg" alt=""></a>
+        <a href="javascript:;" data-id="3" data-img="img/3.jpg"><img src="img/3.jpg" alt=""></a>
+        <a href="javascript:;" data-id="4" data-img="img/4.jpg"><img src="img/4.jpg" alt=""></a>
+        <a href="javascript:;" data-id="5" data-img="img/5.jpg"><img src="img/5.jpg" alt=""></a>
+        <a href="javascript:;" data-id="6" data-img="img/6.jpg"><img src="img/6.jpg" alt=""></a>
+        <a href="javascript:;" data-id="7" data-img="img/7.jpg"><img src="img/7.jpg" alt=""></a>
+        <a href="javascript:;" data-id="8" data-img="img/8.jpg"><img src="img/8.jpg" alt=""></a>
+        <a href="javascript:;" data-id="9" data-img="img/9.jpg"><img src="img/9.jpg" alt=""></a>
+        <a href="javascript:;" data-id="10" data-img="img/10.jpg"><img src="img/10.jpg" alt=""></a>
+        <a href="javascript:;" data-id="11" data-img="img/11.jpg"><img src="img/11.jpg" alt=""></a>
+        <a href="javascript:;" data-id="12" data-img="img/12.jpg"><img src="img/12.jpg" alt=""></a>
+        <a href="javascript:;" data-id="13" data-img="img/13.jpg"><img src="img/13.jpg" alt=""></a>
+        <a href="javascript:;" data-id="14" data-img="img/14.jpg"><img src="img/14.jpg" alt=""></a>
+        <a href="javascript:;" data-id="15" data-img="img/15.jpg"><img src="img/15.jpg" alt=""></a>
+        <a href="javascript:;" data-id="16" data-img="img/16.jpg"><img src="img/16.jpg" alt=""></a>
+        <a href="javascript:;" data-id="17" data-img="img/17.jpg"><img src="img/17.jpg" alt=""></a>
+        <a href="javascript:;" data-id="18" data-img="img/18.jpg"><img src="img/18.jpg" alt=""></a>
+        <a href="javascript:;" data-id="19" data-img="img/19.jpg"><img src="img/19.jpg" alt=""></a>
+        <a href="javascript:;" data-id="20" data-img="img/20.jpg"><img src="img/20.jpg" alt=""></a>
+        <a href="javascript:;" data-id="21" data-img="img/21.jpg"><img src="img/21.jpg" alt=""></a>
+        <a href="javascript:;" data-id="22" data-img="img/22.jpg"><img src="img/22.jpg" alt=""></a>
+        <a href="javascript:;" data-id="23" data-img="img/23.jpg"><img src="img/23.jpg" alt=""></a>
+        <a href="javascript:;" data-id="24" data-img="img/24.jpg"><img src="img/24.jpg" alt=""></a>
+        <a href="javascript:;" data-id="25" data-img="img/25.jpg"><img src="img/25.jpg" alt=""></a>
+        <a href="javascript:;" data-id="26" data-img="img/26.jpg"><img src="img/26.jpg" alt=""></a>
+        <a href="javascript:;" data-id="27" data-img="img/27.jpg"><img src="img/27.jpg" alt=""></a>
+        <a href="javascript:;" data-id="28" data-img="img/28.jpg"><img src="img/28.jpg" alt=""></a>
+        <a href="javascript:;" data-id="29" data-img="img/29.jpg"><img src="img/29.jpg" alt=""></a>
+        <a href="javascript:;" data-id="30" data-img="img/30.jpg"><img src="img/30.jpg" alt=""></a>
+    </div>
+</div>
+
+<div style="margin-top: 200px;background: #ff4e00">
+    <div>
+        <img src="img/1.jpg" alt="">
+    </div>
+</div>
+
+
+<div class="gallary" data-compnent="gallary">
+    <div class="gallary-view">
+        <div class="gallary-view__show">
+            <div class="gallary-view__show--left"></div>
+            <div class="gallary-view__show--right"></div>
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="gallary-arrow gallary-thumb__left"><a href="javascript:;"></a></div>
+    <div class="gallary-arrow gallary-thumb__right"><a href="javascript:;"></a></div>
+    <div class="gallary-thumb__img">
+        <a href="javascript:;" data-id="1" data-img="img/1.jpg"><img src="img/1.jpg" alt=""></a>
+        <a href="javascript:;" data-id="2" data-img="img/2.jpg"><img src="img/2.jpg" alt=""></a>
+        <a href="javascript:;" data-id="3" data-img="img/3.jpg"><img src="img/3.jpg" alt=""></a>
+        <a href="javascript:;" data-id="4" data-img="img/4.jpg"><img src="img/4.jpg" alt=""></a>
+        <a href="javascript:;" data-id="5" data-img="img/5.jpg"><img src="img/5.jpg" alt=""></a>
+        <a href="javascript:;" data-id="6" data-img="img/6.jpg"><img src="img/6.jpg" alt=""></a>
+        <a href="javascript:;" data-id="7" data-img="img/7.jpg"><img src="img/7.jpg" alt=""></a>
+        <a href="javascript:;" data-id="8" data-img="img/8.jpg"><img src="img/8.jpg" alt=""></a>
+        <a href="javascript:;" data-id="9" data-img="img/9.jpg"><img src="img/9.jpg" alt=""></a>
+        <a href="javascript:;" data-id="10" data-img="img/10.jpg"><img src="img/10.jpg" alt=""></a>
+        <a href="javascript:;" data-id="11" data-img="img/11.jpg"><img src="img/11.jpg" alt=""></a>
+        <a href="javascript:;" data-id="12" data-img="img/12.jpg"><img src="img/12.jpg" alt=""></a>
+        <a href="javascript:;" data-id="13" data-img="img/13.jpg"><img src="img/13.jpg" alt=""></a>
+        <a href="javascript:;" data-id="14" data-img="img/14.jpg"><img src="img/14.jpg" alt=""></a>
+        <a href="javascript:;" data-id="15" data-img="img/15.jpg"><img src="img/15.jpg" alt=""></a>
+        <a href="javascript:;" data-id="16" data-img="img/16.jpg"><img src="img/16.jpg" alt=""></a>
+        <a href="javascript:;" data-id="17" data-img="img/17.jpg"><img src="img/17.jpg" alt=""></a>
+        <a href="javascript:;" data-id="18" data-img="img/18.jpg"><img src="img/18.jpg" alt=""></a>
+        <a href="javascript:;" data-id="19" data-img="img/19.jpg"><img src="img/19.jpg" alt=""></a>
+        <a href="javascript:;" data-id="20" data-img="img/20.jpg"><img src="img/20.jpg" alt=""></a>
+        <a href="javascript:;" data-id="21" data-img="img/21.jpg"><img src="img/21.jpg" alt=""></a>
+        <a href="javascript:;" data-id="22" data-img="img/22.jpg"><img src="img/22.jpg" alt=""></a>
+        <a href="javascript:;" data-id="23" data-img="img/23.jpg"><img src="img/23.jpg" alt=""></a>
+        <a href="javascript:;" data-id="24" data-img="img/24.jpg"><img src="img/24.jpg" alt=""></a>
+        <a href="javascript:;" data-id="25" data-img="img/25.jpg"><img src="img/25.jpg" alt=""></a>
+        <a href="javascript:;" data-id="26" data-img="img/26.jpg"><img src="img/26.jpg" alt=""></a>
+        <a href="javascript:;" data-id="27" data-img="img/27.jpg"><img src="img/27.jpg" alt=""></a>
+        <a href="javascript:;" data-id="28" data-img="img/28.jpg"><img src="img/28.jpg" alt=""></a>
+        <a href="javascript:;" data-id="29" data-img="img/29.jpg"><img src="img/29.jpg" alt=""></a>
+        <a href="javascript:;" data-id="30" data-img="img/30.jpg"><img src="img/30.jpg" alt=""></a>
+    </div>
+</div>
+
+<script src="gallary.js"></script>
+<script>
+    ;(function ($) {
+        var See = {
+            ui:{
+                top                 : $(".top"),
+                gallary             : $(".gallary"),
+                gallaryView         : $(".gallary-view"),
+                gallaryThumb        : $('.gallary-thumb__img')
+            },
+            init: function () {
+                console.log($(window).height())
+                this.initgallaryHeight();
+            },
+            initgallaryHeight : function () {
+                var top = this.ui.top.height();
+                var win = $(window).height();
+                this.ui.gallary.height(win-top-105);
+                this.ui.gallaryView.height(win-top-125);
+            }
+        }
+        See.init();
+
+        new Gallary({
+            el          : "[data-compnent='gallary']",
+            selected    : "5",
+        });
+
+    })(jQuery);
+
+</script>
+</body>
+</html>
